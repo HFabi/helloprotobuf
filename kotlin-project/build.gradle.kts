@@ -4,6 +4,7 @@ import com.google.protobuf.gradle.*
 plugins {
     kotlin("jvm") version "1.5.21"
     id("com.google.protobuf") version "0.8.17"
+    id("com.google.protobuf:protobuf-java") version "3.18.0"
 }
 
 group = "me.fabianheck"
