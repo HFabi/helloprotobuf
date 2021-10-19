@@ -1,33 +1,31 @@
-# Hello Protobuf - Face Me! 
-- File-Format/Library to serialize structured data
+# Hello Protobuf - A short introduction
+
+## What?
+- Protobuf is a File-Format/Library to serialize structured data
 - developed by Google, free and open-source
-- cross-plattform: supports C++, C#, Dart, Go, Java, Kotlin, Python
-- goal
-    - faster and smaller than XML
-    - uses a binary format
+- supports C++, C#, Dart, Go, Java, Kotlin, Python
+- uses a binar format with the goal to be smaller and faster than e.g. XML
 - similar technologies
     - Apache Thrift
     - Ion (Amazon)
     - Microsoft Bond protocols
-- different Versions
+- there are different Versions with different syntax and functionality
     - proto2
     - proto3
 
-## How does it work?
-![image info](./img/protobuf_1.png)
+## How?
+![image info](./doc/res/protobuf_1.png)
 1. Use the interface-description language to describ the structure of your data in a *.proto* file.
 2. Generator creates source-code from that description for serializing and deserializing your data, in a specified language.
 ```bash
 # build with protoc
 protoc --proto_path=. --java_out=./build/java --python_out=./build/python ./protobuf/shopping.proto
 ```
-
 3. Use the code in your application together with the protobuf API to access the data.
 
+## Interface-Description Language (.proto file)
 
-## Interface-Description Language, .proto-file
-
-Example 1: 
+**Example 1:**
 ```
 syntax = "proto3";              // polyline.proto
 
@@ -65,7 +63,7 @@ default values, when a message does not contain a particular singular element
 - enums: 0
 
 
-Example 2:
+**Example 2:**
 ```proto
 syntax = "proto3";   
 
@@ -85,17 +83,13 @@ message Result {
 }
 ```
 
-## Extending a protocol buffer over time
-Extension in general is supported.
+**Extension of a .proto-file over time is supported, but:**
 - you must not change the tag number of any existing fields
 - you must not add or delete any required fileds
 - you may delete optional or repeated fields
 - you may add new optional or repeated fields but must use fresh tag numbers(i.e. tag numbers that were never used in this protocol buffer, not even by deleted fields.)
 
-## Message Binary Format
-https://developers.google.com/protocol-buffers/docs/encoding
-
-
 ## Helpful Links
+Binary format explanation: https://developers.google.com/protocol-buffers/docs/encoding
 Docs: https://developers.google.com/protocol-buffers/docs/proto3
 Code-Style: https://developers.google.com/protocol-buffers/docs/style
