@@ -1,0 +1,69 @@
+# builds/ pre compiled
+__pycache__/
+build/
+dist/
+sdist/
+/_python_build
+*.pyc
+
+# environments
+env/
+venv/
+ENV/
+pyvenv.cfg
+.env
+
+# The following part is inspired by official github gitignore for JetBrains
+# https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/misc.xml
+.idea/vcs.xml
+.idea/libraries
+.idea/caches
+.idea/*.iml
+.idea/modules
+.idea/modules.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/httpRequests
+.idea/compiler.xml
+.idea/artifacts
+
+# Generated files
+.idea/**/contentModel.xml
+
+# General
+.DS_Store
+.DS_Store?
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# File-based project format
+*.iws
+.iws
+.iml
+
+# IntelliJ
+out/
+
+# CMake
+cmake-build-*/
+
+# npm modules (just in case)
+node_modules/
+package-lock.json
+
+© 2021 GitHub, Inc.
+Terms

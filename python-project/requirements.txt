@@ -1,0 +1,2 @@
+## install protobuf with pip
+protobuf == 3.18.1
