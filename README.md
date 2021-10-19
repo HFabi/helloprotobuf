@@ -29,10 +29,9 @@ protoc --proto_path=. --java_out=./build/java --python_out=./build/python ./prot
 ```
 syntax = "proto3";              // polyline.proto
 
-message SearchRequest {         // message definition
-  string query = 1;             // type name = unique tag
-  int32 page_number = 2;            
-  int32 result_per_page = 3;
+message Item {                  // message definition
+    string name = 1;            // type name = unique tag
+    int32 amount = 2;
 }
 
 // line comment
@@ -72,14 +71,13 @@ option optimize_for = CODE_SIZE;
 option java_multiple_files = true;
 ...
 
-message SearchResponse {
-  repeated Result results = 1;
+message ShoppingList {
+    repeated Item items = 1;
 }
 
-message Result {
-  string url = 1;
-  string title = 2;
-  repeated string snippets = 3;
+message Item {
+    string name = 1;
+    int32 amount = 2;
 }
 ```
 
@@ -90,6 +88,6 @@ message Result {
 - you may add new optional or repeated fields but must use fresh tag numbers(i.e. tag numbers that were never used in this protocol buffer, not even by deleted fields.)
 
 ## Helpful Links
-Binary format explanation: https://developers.google.com/protocol-buffers/docs/encoding
-Docs: https://developers.google.com/protocol-buffers/docs/proto3
-Code-Style: https://developers.google.com/protocol-buffers/docs/style
+- Binary format explanation: https://developers.google.com/protocol-buffers/docs/encoding
+- Docs: https://developers.google.com/protocol-buffers/docs/proto3
+- Code-Style: https://developers.google.com/protocol-buffers/docs/style
